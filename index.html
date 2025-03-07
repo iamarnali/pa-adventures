@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P&A Adventures</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f7f3ee;
+            margin: 0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        h1 {
+            color: #5a534f;
+            margin-bottom: 60px;
+        }
+
+        .scene {
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            height: 250px;
+        }
+
+        .characters {
+            position: absolute;
+            bottom: 100px;
+            width: 150px;
+            height: 150px;
+            background-image: url('ch.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: bottom center;
+            image-rendering: pixelated;
+            animation: jump 1.5s infinite;
+            z-index: 2; /* Characters in front */
+        }
+
+        .couch {
+            position: absolute;
+            bottom: 40px;  /* Increase this number to move the couch higher */
+            width: 250px;
+            height: 200px;
+            background-image: url('couch.png');
+            background-size: cover;
+            image-rendering: pixelated;
+            z-index: 1; /* Characters in front */
+        }
+
+        @keyframes jump {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-50px); }
+        }
+    </style>
+</head>
+<body>
+    <h1>P&A Adventures</h1>
+    <div class="scene">
+        <div class="characters"></div>
+        <div class="couch"></div>
+    </div>
+</body>
+</html>
